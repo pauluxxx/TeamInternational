@@ -58,3 +58,10 @@ c:\users\paulu\onedrive\документы\visual studio 2015\Projects\TaskTeamI
 c:\users\paulu\onedrive\документы\visual studio 2015\Projects\TaskTeamInternatiaonal\MvcUi\obj\Debug\MvcUi.csprojResolveAssemblyReference.cache
 c:\users\paulu\onedrive\документы\visual studio 2015\Projects\TaskTeamInternatiaonal\MvcUi\obj\Debug\MvcUi.dll
 c:\users\paulu\onedrive\документы\visual studio 2015\Projects\TaskTeamInternatiaonal\MvcUi\obj\Debug\MvcUi.pdb
+c:\Users\paulu\OneDrive\Документы\Visual Studio 2015\Projects\TaskTeamInternatiaonal\MvcUi\bin\EntityFramework.dll
+c:\Users\paulu\OneDrive\Документы\Visual Studio 2015\Projects\TaskTeamInternatiaonal\MvcUi\bin\EntityFramework.SqlServer.dll
+c:\Users\paulu\OneDrive\Документы\Visual Studio 2015\Projects\TaskTeamInternatiaonal\MvcUi\bin\NLog.dll
+c:\Users\paulu\OneDrive\Документы\Visual Studio 2015\Projects\TaskTeamInternatiaonal\MvcUi\bin\EntityFramework.xml
+c:\Users\paulu\OneDrive\Документы\Visual Studio 2015\Projects\TaskTeamInternatiaonal\MvcUi\bin\EntityFramework.SqlServer.xml
+c:\Users\paulu\OneDrive\Документы\Visual Studio 2015\Projects\TaskTeamInternatiaonal\MvcUi\bin\NLog.xml
+c:\Users\paulu\OneDrive\Документы\Visual Studio 2015\Projects\TaskTeamInternatiaonal\MvcUi\bin\WebActivatorEx.dll
