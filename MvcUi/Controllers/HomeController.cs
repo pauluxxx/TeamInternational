@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MvcUi.Infrastructure;
+using Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,11 +8,15 @@ using System.Web.Mvc;
 
 namespace MvcUi.Controllers
 {
+    [CustomErrorHandler]//куда его лучше положить?
     public class HomeController : Controller
     {
+        [Inject]
+        public IWeapon weapon { get; set; }
         public ActionResult Index()
+
         {
-            return View();
+           return View();
         }
 
         public ActionResult About()
@@ -20,11 +26,21 @@ namespace MvcUi.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Bazuka()
         {
-            ViewBag.Message = "Your contact page.";
+            return View(weapon);
+        }
+    }
 
-            return View();
+    public interface IWeapon
+    {
+        string Kill();
+    }
+    public class Bazuka : IWeapon
+    {
+        public string Kill()
+        {
+            return "BIG BADABUM!";
         }
     }
 }
