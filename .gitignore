@@ -1,3 +1,5 @@
 /Business.Tests
 /packages
 /MvcUi/bin
+/MvcUi/Content/logs
+/MvcUi/obj
