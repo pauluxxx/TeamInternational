@@ -32,15 +32,5 @@ namespace MvcUi.Controllers
         }
     }
 
-    public interface IWeapon
-    {
-        string Kill();
-    }
-    public class Bazuka : IWeapon
-    {
-        public string Kill()
-        {
-            return "BIG BADABUM!";
-        }
-    }
+   
 }
