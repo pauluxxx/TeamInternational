@@ -18,6 +18,7 @@ namespace TeamProject.DAL
         public UnitOfWork()
         {
             db = new CinemaContext();
+            db.Database.CreateIfNotExists();
         }
 
         public UserRepository Users

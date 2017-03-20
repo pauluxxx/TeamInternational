@@ -24,6 +24,7 @@ namespace MvcUi
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
+            Database.SetInitializer(new ProjectInitializer());
         }
         public override void Init()
         {
