@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using TeamProject.DAL;
 
 namespace MvcUi
 {
@@ -19,12 +20,14 @@ namespace MvcUi
         protected void Application_Start()
         {
             logger.Info("Application Start");
+
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
+       
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
-            Database.SetInitializer(new ProjectInitializer());
+           
         }
         public override void Init()
         {

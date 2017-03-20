@@ -14,7 +14,9 @@ namespace TeamProject.DAL
     {
         public CinemaContext() : base("CinemaContext")
         { }
-
+        static CinemaContext() {
+            Database.SetInitializer<CinemaContext>(new CinemaInitializer());
+        }
         public DbSet<User> Users { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<View> Views { get; set; }

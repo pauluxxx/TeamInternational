@@ -23,7 +23,7 @@ namespace MvcUi.Controllers
             }
             return result;
         }
-
+        [Authorize]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

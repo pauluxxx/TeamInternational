@@ -18,13 +18,38 @@ namespace MvcUi.Controllers
     public class AccountController : Controller
     {
         [Inject]
-        IRepository<User> users;
+        private ICinemaWork work;
+        public AccountController(ICinemaWork work)
+        {
+            this.work = work;
+        }
         // GET: Account
         public ActionResult Login()
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // поиск пользователя в бд
+                User user = null;
+                user = work.Users.GetByEmailAndPassword(model.Name, model.Password);
+                if (user != null)
+                {
+                    FormsAuthentication.SetAuthCookie(model.Name, true);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Пользователя с таким логином и паролем нет");
+                }
+            }
 
+            return View(model);
+        }
         public ActionResult Register()
         {
             return View();
@@ -33,15 +58,17 @@ namespace MvcUi.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterModel model)
         {
-            users = new UnitOfWork().Users;
+            UserRepository users = work.Users;
             if (ModelState.IsValid)
             {
                 User user = null;
-                users.GetAll().FirstOrDefault(e => e.Email == model.Name);
+                user = users.GetByEmail(model.Name);
                 if (user == null)
                 {
                     //create a new one
-                    users.Create(new User { Name = model.Name });
+                    user = new User { Name = model.Name, Password = model.Password, Email = model.Name };
+                    users.Create(user);
+                    work.Save();
                     if (user != null)
                     {
                         FormsAuthentication.SetAuthCookie(model.Name, true);
@@ -58,29 +85,17 @@ namespace MvcUi.Controllers
                     ModelState.AddModelError("", "Пользователь с таким логином уже существует");
                     return View(model);
                 }
-                //if (user == null)
-                //{
-                //    //create a new one
-                //    users.Create(new User { Name = model.Name });
-                //    if (user != null)
-                //    {
-                //        FormsAuthentication.SetAuthCookie(model.Name, true);
-                //        return RedirectToAction("Index", "Home");
-                //    }
-                //    else
-                //    {
-                //        return null;
-                //    }
-                //}
-                //else
-                //{
-                //    ModelState.AddModelError("", "Пользователь с таким логином уже существует");
-                //}
             }
             else
             {
                 return View(model);
             }
+        }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

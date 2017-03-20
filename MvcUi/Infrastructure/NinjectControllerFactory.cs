@@ -13,11 +13,9 @@ namespace MvcUi.Infrastructure
     // TODO а можно этот клас использовать как dependency resolver и вообще зачем ресолвер нужен?
     {
         private IKernel kernel;
-        private CinemaContext _DBContextCinema;
         public NinjectControllerFactory()
         {
             kernel = new StandardKernel();
-            _DBContextCinema = new CinemaContext();
             AddBindings();
         }
         protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)
@@ -28,10 +26,7 @@ namespace MvcUi.Infrastructure
         }
         private void AddBindings()
         {
-            //  kernel.Bind<IRepository<User>>().To<UserRepository>().WithConstructorArgument(_DBContextCinema);
-            UnitOfWork unit = new UnitOfWork();
-            var p = unit.Users;
-            
+            kernel.Bind<ICinemaWork>().To<UnitOfWork>().InSingletonScope();
         }
     }
 }

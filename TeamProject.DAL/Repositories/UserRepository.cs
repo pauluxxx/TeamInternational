@@ -33,5 +33,10 @@ namespace TeamProject.DAL.Repositories
 
         public void Update(User user)
             => db.Entry<User>(user).State = EntityState.Modified;
+        public User GetByEmail(string mail)
+            => db.Users.SingleOrDefault(user => user.Email == mail);
+
+        public User GetByEmailAndPassword(string mail, string password)
+        => db.Users.SingleOrDefault(user=>user.Email==mail&&user.Password==password);
     }
 }

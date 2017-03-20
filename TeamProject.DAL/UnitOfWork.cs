@@ -7,7 +7,8 @@ using TeamProject.DAL.Repositories;
 
 namespace TeamProject.DAL
 {
-    public class UnitOfWork
+
+    public class UnitOfWork:ICinemaWork//to inject 
     {
         private CinemaContext db;
 
@@ -18,7 +19,6 @@ namespace TeamProject.DAL
         public UnitOfWork()
         {
             db = new CinemaContext();
-            db.Database.CreateIfNotExists();
         }
 
         public UserRepository Users
