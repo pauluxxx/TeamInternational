@@ -59,7 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CinemaContext.cs" />
-    <Compile Include="CinemaInitializer.cs" />
     <Compile Include="Entities\Interfaces\IEntity.cs" />
     <Compile Include="Entities\Movie.cs" />
     <Compile Include="Entities\View.cs" />

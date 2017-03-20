@@ -13,9 +13,11 @@ namespace TeamProject.DAL
     public class CinemaContext : DbContext
     {
         public CinemaContext() : base("CinemaContext")
-        { }
+        {
+            Database.CreateIfNotExists();
+        }
         static CinemaContext() {
-            Database.SetInitializer<CinemaContext>(new CinemaInitializer());
+          //  Database.SetInitializer<CinemaContext>(new Configuration());
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Movie> Movies { get; set; }
