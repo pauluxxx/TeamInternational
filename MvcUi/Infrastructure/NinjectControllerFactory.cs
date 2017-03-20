@@ -23,8 +23,7 @@ namespace MvcUi.Infrastructure
         private void AddBindings()
         {
            
-                kernel.Bind<IWeapon>().To<Bazuka>();
-         
+              
         }
     }
 }

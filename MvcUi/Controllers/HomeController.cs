@@ -12,7 +12,6 @@ namespace MvcUi.Controllers
     public class HomeController : Controller
     {
         [Inject]
-        public IWeapon weapon { get; set; }
         public ActionResult Index()
 
         {
@@ -26,10 +25,6 @@ namespace MvcUi.Controllers
             return View();
         }
 
-        public ActionResult Bazuka()
-        {
-            return View(weapon);
-        }
     }
 
    
