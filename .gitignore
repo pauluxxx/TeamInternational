@@ -1,5 +1,7 @@
 /Business.Tests
+/TestingDAL
 /packages
-/MvcUi/bin
-/MvcUi/Content/logs
+/MvcUi/bin/MvcUi/Content/logs
 /MvcUi/obj
+/TeamProject.DAL/bin
+/TeamProject.DAL/obj

@@ -1,0 +1,12 @@
+D:\Programs\Desctop\TeamProject\TestingDAL\bin\Debug\TestingDAL.exe.config
+D:\Programs\Desctop\TeamProject\TestingDAL\bin\Debug\TestingDAL.exe
+D:\Programs\Desctop\TeamProject\TestingDAL\bin\Debug\TestingDAL.pdb
+D:\Programs\Desctop\TeamProject\TestingDAL\bin\Debug\TeamProject.DAL.dll
+D:\Programs\Desctop\TeamProject\TestingDAL\bin\Debug\EntityFramework.dll
+D:\Programs\Desctop\TeamProject\TestingDAL\bin\Debug\TeamProject.DAL.pdb
+D:\Programs\Desctop\TeamProject\TestingDAL\bin\Debug\EntityFramework.xml
+D:\Programs\Desctop\TeamProject\TestingDAL\obj\Debug\TestingDAL.csprojResolveAssemblyReference.cache
+D:\Programs\Desctop\TeamProject\TestingDAL\obj\Debug\TestingDAL.exe
+D:\Programs\Desctop\TeamProject\TestingDAL\obj\Debug\TestingDAL.pdb
+D:\Programs\Desctop\TeamProject\TestingDAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programs\Desctop\TeamProject\TestingDAL\bin\Debug\EntityFramework.SqlServer.xml
